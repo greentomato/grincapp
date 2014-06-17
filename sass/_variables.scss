@@ -1,0 +1,45 @@
+// COLORS
+$mainColor:#19B99A;
+$bgColor: darken($mainColor, 10);
+$bgColorAlt: #ECF0F1;
+$bgColorAltDarken: darken($bgColorAlt, 10);
+$borderColor: #D0DBDD;
+$contentColor: $bgColorAlt;
+
+$rangeBajo:#2ecc71;
+$rangeMedio:#f1c40f;
+$rangeAlto:#e74c3c;
+
+$refColor1:#1abc9c;
+$refColor2:#2ecc71;
+$refColor3:#3498db;
+$refColor4:#9b59b6;
+$refColor5:#34495e;
+$refColor6:#f1c40f;
+$refColor7:#e67e22;
+$refColor8:#e74c3c;
+$refColor9:#bdc3c7;
+$refColor10:#95a5a6;
+
+
+// TYPE
+$bodyColor: #444;
+$subTitleColor: lighten($bodyColor, 20);
+$baseFontSize: 1.4em;
+
+// CONTENT
+$border: 1px solid $borderColor;
+$contentPadding: 60px;
+$asidePadding: 20px;
+$asidePaddingAlt: 0 20px;
+$headerHeight: 60px;
+$asideWidth:300px;
+$nativaListItemH:60px;
+
+// DEVICES
+$xs: 480px;
+$small: 640px;
+$medium: 768px;
+$large: 1100px;
+$xl: 1280px;
+$xxl: 1700px;

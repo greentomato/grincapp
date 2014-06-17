@@ -1,0 +1,38 @@
+html {
+	font-size: 62.5%;
+	height: 100%;
+}
+
+body {
+	font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: $contentColor;
+	padding-top: $headerHeight;
+	padding-bottom: 51px;
+	position: relative;
+	min-height: 100%;
+	@include border-box;
+}
+
+
+img {
+	max-width: 100%;
+}
+
+.hr {
+	width: 100%;
+	height: 1px;
+	background-color: $borderColor;
+}
+
+
+.clearfix {
+	float: none;
+}
+
+// MEDIA QUERIES
+@include min-screen($medium) {
+	body {
+		padding-left: $asideWidth;
+		padding-top: 0;
+	}
+}

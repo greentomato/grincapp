@@ -1,0 +1,103 @@
+.esquemaIndividual {
+	width: 100%;
+	overflow: hidden;
+}
+
+.esquemaBox {
+	@extend .spaceBox;
+	margin-bottom: 40px;
+	overflow: hidden;
+
+	.imgBox {
+		position: relative;
+		overflow: hidden;
+	}
+	.itemHoverEffect {
+		bottom: 0;
+	}
+	
+	i {
+			text-align: center;
+			margin-top: -35px;
+			margin-left: -60px;
+		}
+	span {
+		font-size: 16px;
+		display: block;
+		font-weight: bold;
+		padding: 10px;
+	}
+
+	&.esquemaFull {
+		width: auto;
+		max-width: 100%;
+	}
+}
+.esquemaData {
+		width: 100%;
+		display: inline-block;
+		background-color: #fff;
+		border: $border;
+		text-decoration: none;
+		padding-bottom: 20px;
+		overflow: hidden;
+		text-align: left;
+		position: relative;
+		@include border-radius(4px);
+		@include border-box;
+		@include boxShadow;
+}
+.esquemaReference {
+	@include border-radius(50%);
+	height: 30px;
+	width:30px;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	margin-top: -15px;
+	display: block;
+}
+
+
+
+// COLORES DE REFERENCIA
+
+.refColor1 {
+	background: $refColor1;
+}
+
+.refColor2 {
+	background: $refColor2;
+}
+
+.refColor3 {
+	background: $refColor3;
+}
+
+.refColor4 {
+	background: $refColor4;
+}
+
+.refColor5 {
+	background: $refColor5;
+}
+
+.refColor6 {
+	background: $refColor6;
+}
+
+.refColor7 {
+	background: $refColor7;
+}
+
+.refColor8 {
+	background: $refColor8;
+}
+
+.refColor9 {
+	background: $refColor9;
+}
+
+.refColor10 {
+	background: $refColor10;
+}

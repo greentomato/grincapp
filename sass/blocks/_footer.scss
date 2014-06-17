@@ -1,0 +1,21 @@
+footer {
+	text-align: center;
+	border-top: $border;
+	padding: 20px 0;
+	background-color: #FFF;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 200;
+	color: darken($bgColorAlt, 20);
+	font-size: $baseFontSize;
+}
+
+// MEDIA QUERIES
+
+@include min-screen($medium) {
+	footer {
+		left: 300px;
+	}
+}

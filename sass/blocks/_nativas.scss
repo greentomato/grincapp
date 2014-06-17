@@ -1,0 +1,87 @@
+.smallNav {
+	background-color: $bgColorAlt;
+	text-align: left;
+	padding: 10px 20px;
+	border-bottom: $border;
+	a {
+		padding: 5px 0;
+		color: darken($bgColorAlt, 30);
+		font-size: 13px;
+		text-decoration: none;
+
+		&:hover {
+			color: darken($bgColorAlt, 50);
+		}
+	}
+
+	i {
+		margin-right: 10px;
+	}
+}
+
+.nativaListHeader {
+	padding: 10px 20px;
+
+	a {
+		margin-bottom: 0;
+		text-decoration: none;
+		display: inline-block;
+		padding: 5px 0;
+		color:$mainColor;
+		&:hover {
+			color: darken($mainColor, 10);
+		}
+	}
+
+	h2 {
+		font-size: 18px;
+		margin: 5px 0;
+
+		span {
+			font-weight: bold;
+		}
+	}
+}
+
+.nativaListItem {
+	height: $nativaListItemH;
+	border-bottom: $border;
+	cursor: pointer;
+	background-color: #fff;
+	padding: 10px 20px;
+	position: relative;
+
+	img {
+		height: 100%;
+		width: auto;
+		float: left;
+		border: $border;
+		@include border-radius(4px);
+	}
+
+	&:hover {
+		background:$bgColorAlt;
+		border-color: darken($borderColor, 10);
+		@include transition(0.3s);
+	}
+
+	&.active {
+		background: $bgColorAlt;
+		border-color: $mainColor;
+	}
+
+	a {
+		color: $bodyColor;
+	}
+	a:active {
+		color: $mainColor;
+	}
+}
+
+.nativaListItemTitle {
+	display: inline-block;
+	float: left;
+	padding: 10px 20px;
+}
+
+
