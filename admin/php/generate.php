@@ -1,0 +1,175 @@
+<?php
+set_time_limit(0);
+ini_set("memory_limit","500M");
+include_once('bootstrap.php');
+//Doctrine_Core::dropDatabases();
+//Doctrine_Core::createDatabases();
+$conn->setCollate('utf8_unicode_ci');
+$conn->setCharset('utf8');
+Doctrine_Core::createTablesFromModels('models');
+
+$zonaCollection = new Doctrine_Collection('zona');
+$n = new Zona();
+$n->value = 'Zona Urbana';
+$n->tooltip = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+$n->icon = 'fa-building';
+$zonaCollection[] = $n;
+$n = new Zona();
+$n->value = 'Zona Rural';
+$n->tooltip = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+$n->icon = 'fa-home';
+$zonaCollection[] = $n;
+$n = new Zona();
+$n->value = 'Zona Natural';
+$n->tooltip = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+$n->icon = 'fa-pagelines';
+$zonaCollection[] = $n;
+
+$dimensionCollection = new Doctrine_Collection('dimension');
+$n = new Dimension();
+$n->value = 'Menos de 500m2';
+$n->letra = 'P';
+$dimensionCollection[] = $n;
+$n = new Dimension();
+$n->value = 'Hasta 1000m2';
+$n->letra = 'M';
+$dimensionCollection[] = $n;
+$n = new Dimension();
+$n->value = 'Más de 1000m2';
+$n->letra = 'G';
+$dimensionCollection[] = $n;
+
+$espacioCollection = new Doctrine_Collection('espacio');
+$n = new Espacio();
+$n->value = 'Contrafrente';
+$n->descripcion = 'Jardín disponible en el contrafrente del terreno';
+$n->imagen = 'jardin-contrafrente.jpg';
+$espacioCollection[] = $n;
+$n = new Espacio();
+$n->value = 'Frente';
+$n->descripcion = 'Jardín disponible al frente del terreno';
+$n->imagen = 'jardin-frente.jpg';
+$espacioCollection[] = $n;
+$n = new Espacio();
+$n->value = 'Vivienda centrada';
+$n->descripcion = 'Jardín disponible al frente y contrafrente del terreno.';
+$n->imagen = 'jardin-centrado.jpg';
+$espacioCollection[] = $n;
+
+$esquemaCollection = new Doctrine_Collection('esquema');
+$n = new Esquema();
+$n->value = 'Natural';
+$n->imagen = 'esquema-natural.jpg';
+$n->grafico = 'esquema-natural-data.jpg';
+$esquemaCollection[] = $n;
+$n = new Esquema();
+$n->value = 'Clásico';
+$n->imagen = 'esquema-clasico.jpg';
+$esquemaCollection[] = $n;
+$n = new Esquema();
+$n->value = 'Mixto';
+$n->imagen = 'esquema-mixto.jpg';
+$esquemaCollection[] = $n;
+
+$solCollection = new Doctrine_Collection('sol');
+$n = new Sol();
+$n->value = 'Sombra';
+$n->icon = '<i class="fa fa-cloud fa-2x"></i>';
+$solCollection[] = $n;
+$n = new Sol();
+$n->value = 'Medio Sol';
+$n->icon = '<i class="fa fa-cloud"></i><i class="fa fa-sun-o fa-2x"></i>';
+$solCollection[] = $n;
+$n = new Sol();
+$n->value = 'Soleado';
+$n->icon = '<i class="fa fa-sun-o fa-2x"></i>';
+$solCollection[] = $n;
+
+$tipoTagCollection = new Doctrine_Collection('TipoTag');
+$n = New TipoTag();
+$n->value = 'Asoleamiento';
+$n->icon = 'fa-sun-o';
+$n->has_nivel = 1;
+$n->has_descripcion = 0;
+$tipoTagCollection[] = $n;
+$n = New TipoTag();
+$n->value = 'Riego';
+$n->icon = 'fa-tint';
+$n->has_nivel = 1;
+$n->has_descripcion = 0;
+$tipoTagCollection[] = $n;
+$n = new TipoTag();
+$n->value = 'Drenaje';
+$n->icon = 'fa-filter';
+$n->has_nivel = 1;
+$n->has_descripcion = 0;
+$tipoTagCollection[] = $n;
+$n = new TipoTag();
+$n->value = 'Observaciones';
+$n->icon = 'fa-exclamation-triangle';
+$n->has_nivel = 0;
+$n->has_descripcion = 1;
+$tipoTagCollection[] = $n;
+
+$protoTagCollection = new Doctrine_Collection('Prototag');
+
+$n = new Prototag();
+$n->tooltip = 'Un asoleamiento bajo implica';
+$n->nivel = 1;
+$n->id_tipo = 1;
+$protoTagCollection[] = $n;
+$n = new Prototag();
+$n->tooltip = 'Un asoleamiento medio implica';
+$n->nivel = 2;
+$n->id_tipo = 1;
+$protoTagCollection[] = $n;
+$n = new Prototag();
+$n->tooltip = 'Un asoleamiento alto implica al menos diez horas de luz al día';
+$n->nivel = 3;
+$n->id_tipo = 1;
+$protoTagCollection[] = $n;
+
+$n = new Prototag();
+$n->tooltip = 'La frecuencia de riego que necesita esta especie';
+$n->nivel = 1;
+$n->id_tipo = 2;
+$protoTagCollection[] = $n;
+$n = new Prototag();
+$n->tooltip = 'La frecuencia de riego que necesita esta especie';
+$n->nivel = 2;
+$n->id_tipo = 2;
+$protoTagCollection[] = $n;
+$n = new Prototag();
+$n->tooltip = 'La frecuencia de riego que necesita esta especie';
+$n->nivel = 3;
+$n->id_tipo = 2;
+$protoTagCollection[] = $n;
+
+$n = new Prototag();
+$n->tooltip = 'La capacidad de drenaje que debe tener el suelo para esta especie';
+$n->nivel = 1;
+$n->id_tipo = 3;
+$protoTagCollection[] = $n;
+$n = new Prototag();
+$n->tooltip = 'La capacidad de drenaje que debe tener el suelo para esta especie';
+$n->nivel = 2;
+$n->id_tipo = 3;
+$protoTagCollection[] = $n;
+$n = new Prototag();
+$n->tooltip = 'La capacidad de drenaje que debe tener el suelo para esta especie';
+$n->nivel = 3;
+$n->id_tipo = 3;
+$protoTagCollection[] = $n;
+
+$n = new Prototag();
+$n->tooltip = 'Datos adicionales sobre esta especie';
+$n->id_tipo = 4;
+$protoTagCollection[] = $n;
+
+
+$admin = new Usuario();
+$admin->nick = 'admin';
+$admin->pass = 'admin';
+
+Doctrine_Manager::connection()->flush();
+?>
