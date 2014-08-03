@@ -46,7 +46,9 @@
     
     <!-- SIDEBAR -->
     <aside>
-    <?php if($view == "1" or $view == "2") include('common/form-ubicacion.php');?>
+    <?php if($view == "1") include('common/form-ubicacion.php');?>
+
+    <?php if($view == "2") include('common/form-ubicacion-checked.php');?>
 
     <?php if($view == "3" or $view == "4") include('common/listado-especies.php');?>
 
@@ -55,7 +57,8 @@
 
     </aside>
 
-    <?php if($view == "4" or $view == "6") include('common/especie-individual.php');?>
+    <?php if($view == "4" or $view == "6") include('common/especie-individual-carquejilla.php');?>
+    
 
 <!-- FOOTER -->
 <footer>

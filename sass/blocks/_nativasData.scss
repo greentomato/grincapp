@@ -103,11 +103,12 @@
 	h3 {
 		font-weight: bold;
 		font-size: 1.5em;
-		margin-top: 8px;
+		margin: 8px 0;
 		float: left;
 
 		i {
 			margin-right: 10px;
+			color: darken($bgColorAltDarken,20);
 		}
 	}
 	
@@ -124,8 +125,28 @@
 
 	}
 
+	.nativeFlower {
+		margin-top: 10px;
+		float: left;
+		@include border-radius(2px);
+	}
+
 	&.hasImage {
 		padding: 0;
+	}
+
+	.viverosLink {
+		float: right;
+		font-size: 13px;
+		color: $mainColor;
+		padding: 9px 0;
+		border-bottom: 1px solid transparent;
+		text-decoration: none;
+
+
+		&:hover {
+			border-bottom: 1px solid $mainColor;
+		}
 	}
 }
 	
@@ -156,6 +177,14 @@
 .rangeAlto {
 	color: $rangeAlto;
 }
+
+.nativeDataCardItem {
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+
+
 
 @include min-screen($medium) {
 	.nativaDataBoxShadow {

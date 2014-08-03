@@ -5,7 +5,7 @@
              <div class="asideBox">
             <label class="asideItemHeader">&#191;D&oacute;nde estas?</label>
            
-            <input type="text" placeholder="Ej. Capital Federal">
+            <input type="text" placeholder="Ej. San Isidro, Buenos Aires">
             </div>
             <!-- AREA DESCRIPTION -->
             <div class="hr"></div>
@@ -24,7 +24,7 @@
              <label class="areaDescription">
                 <input type="radio" name="areaDescription" value="urban">
                 <div class="radioEffect asideItemContent tooltip" title="Zona relativamente despojada de edificaciones. Mucho espacio verde disponible. Ej. quinta, granja, etc.">
-                    <h3><i class="fa fa-home fa-lg"></i>Zona Sub-urbana</h3>
+                    <h3><i class="fa fa-home fa-lg"></i>Zona Rural</h3>
                     
                 </div>
             </label>
@@ -32,7 +32,7 @@
              <label class="areaDescription">
                 <input type="radio" name="areaDescription" value="urban">
                 <div class="radioEffect asideItemContent tooltip" title="Espacio casi salvaje, con mínima edificación y buena disponibilidad para restaruación. Ej. monte, campo, etc.">
-                    <h3><i class="fa fa-pagelines fa-lg"></i>Zona Rural</h3>
+                    <h3><i class="fa fa-pagelines fa-lg"></i>Zona Natural</h3>
                     
                 </div>
             </label>

@@ -1,19 +1,18 @@
 <!-- SPACES RESULTS --> 
-        <div class="spacesResultBox">
-            <ul>
-                <li class="esquemaBox">
-                    <a href="?view=5">
-                    <div class="imgBox">
-                        <div class="itemHoverEffect">
-                            <i class="fa fa-pagelines fa-4x"></i>
-                        </div>
-                        <img src="img/nativas/jardin/esquema-natural.jpg" alt="Natural">
-                    </div>
-                    <h3>Natural</h3>
+        <div class="esquemaIndividual">
+            <div class="esquemaBox esquemaFull">
+                <div class="esquemaData">                  
+                    <img src="img/nativas/balcon/esquema-1.png" alt="Esquema 1">                    
+                    <h3>Esquema Natural</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, dolorum, magnam, similique fugit culpa recusandae corrupti velit vero quas a inventore sit qui veniam iusto nulla. Sint, tenetur neque sed.</p>
                     </a>
-                </li>
+                </div>
+            </div> 
+        </div>
                 
+        <div class="spacesResultBox"> 
+            
+            <ul>
                 <li class="esquemaBox">
                     <a href="?view=5">
                     <div class="imgBox">
@@ -39,7 +38,6 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, dolorum, magnam, similique fugit culpa recusandae corrupti velit vero quas a inventore sit qui veniam iusto nulla. Sint, tenetur neque sed.</p>
                     </a>
                 </li>
-                
-
             </ul>
+            <div class="clearfix"></div>
         </div>

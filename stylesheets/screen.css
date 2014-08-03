@@ -938,8 +938,8 @@ input[type="radio"]:checked + .radioEffect {
 }
 /* line 54, ../sass/blocks/_nativas.scss */
 .nativaListItem img {
-  height: 100%;
-  width: auto;
+  height: 58px;
+  width: 58px;
   float: left;
   border: 1px solid #d0dbdd;
   -webkit-border-radius: 4px;
@@ -969,8 +969,18 @@ input[type="radio"]:checked + .radioEffect {
 .nativaListItem a:active {
   color: #19b99a;
 }
+/* line 79, ../sass/blocks/_nativas.scss */
+.nativaListItem h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 83, ../sass/blocks/_nativas.scss */
+.nativaListItem p {
+  margin-top: 10px;
+  font-size: 13px;
+}
 
-/* line 81, ../sass/blocks/_nativas.scss */
+/* line 89, ../sass/blocks/_nativas.scss */
 .nativaListItemTitle {
   display: inline-block;
   float: left;
@@ -1102,18 +1112,19 @@ input[type="radio"]:checked + .radioEffect {
 .nativaDataItem h3 {
   font-weight: bold;
   font-size: 1.5em;
-  margin-top: 8px;
+  margin: 8px 0;
   float: left;
 }
 /* line 109, ../sass/blocks/_nativasData.scss */
 .nativaDataItem h3 i {
   margin-right: 10px;
+  color: #94aab0;
 }
-/* line 114, ../sass/blocks/_nativasData.scss */
+/* line 115, ../sass/blocks/_nativasData.scss */
 .nativaDataItem p {
   font-size: 14px;
 }
-/* line 118, ../sass/blocks/_nativasData.scss */
+/* line 119, ../sass/blocks/_nativasData.scss */
 .nativaDataItem img {
   width: 100%;
   height: auto;
@@ -1121,49 +1132,77 @@ input[type="radio"]:checked + .radioEffect {
   padding: 0;
   border: none;
 }
-/* line 127, ../sass/blocks/_nativasData.scss */
+/* line 128, ../sass/blocks/_nativasData.scss */
+.nativaDataItem .nativeFlower {
+  margin-top: 10px;
+  float: left;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 134, ../sass/blocks/_nativasData.scss */
 .nativaDataItem.hasImage {
   padding: 0;
 }
+/* line 138, ../sass/blocks/_nativasData.scss */
+.nativaDataItem .viverosLink {
+  float: right;
+  font-size: 13px;
+  color: #19b99a;
+  padding: 9px 0;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+}
+/* line 147, ../sass/blocks/_nativasData.scss */
+.nativaDataItem .viverosLink:hover {
+  border-bottom: 1px solid #19b99a;
+}
 
-/* line 134, ../sass/blocks/_nativasData.scss */
+/* line 155, ../sass/blocks/_nativasData.scss */
 .rangeDots {
   text-align: right;
   float: right;
 }
-/* line 139, ../sass/blocks/_nativasData.scss */
+/* line 160, ../sass/blocks/_nativasData.scss */
 .rangeDots i {
   margin-right: 2px;
 }
-/* line 143, ../sass/blocks/_nativasData.scss */
+/* line 164, ../sass/blocks/_nativasData.scss */
 .rangeDots label {
   font-size: 13px;
   display: block;
   margin-bottom: 5px;
 }
 
-/* line 150, ../sass/blocks/_nativasData.scss */
+/* line 171, ../sass/blocks/_nativasData.scss */
 .rangeBajo {
   color: #2ecc71;
 }
 
-/* line 153, ../sass/blocks/_nativasData.scss */
+/* line 174, ../sass/blocks/_nativasData.scss */
 .rangeMedio {
   color: #f1c40f;
 }
 
-/* line 156, ../sass/blocks/_nativasData.scss */
+/* line 177, ../sass/blocks/_nativasData.scss */
 .rangeAlto {
   color: #e74c3c;
 }
 
+/* line 181, ../sass/blocks/_nativasData.scss */
+.nativeDataCardItem {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+}
+
 @media screen and (min-width: 768px) {
-  /* line 161, ../sass/blocks/_nativasData.scss */
+  /* line 190, ../sass/blocks/_nativasData.scss */
   .nativaDataBoxShadow {
     display: block;
   }
 
-  /* line 164, ../sass/blocks/_nativasData.scss */
+  /* line 193, ../sass/blocks/_nativasData.scss */
   .nativaDataBox {
     border: none;
     border-right: 1px solid #d0dbdd;
@@ -1193,12 +1232,6 @@ input[type="radio"]:checked + .radioEffect {
 /* line 15, ../sass/blocks/_esquemas.scss */
 .esquemaBox .itemHoverEffect {
   bottom: 0;
-}
-/* line 19, ../sass/blocks/_esquemas.scss */
-.esquemaBox i {
-  text-align: center;
-  margin-top: -35px;
-  margin-left: -60px;
 }
 /* line 24, ../sass/blocks/_esquemas.scss */
 .esquemaBox span {

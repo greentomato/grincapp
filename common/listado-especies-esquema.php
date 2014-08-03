@@ -1,11 +1,11 @@
 <!-- LOCATION -->
 
 <div class="smallNav">
-    <a href="?view=2"><i class="fa fa-arrow-left"></i>Volver</a>
+    <a href="?view=3"><i class="fa fa-arrow-left"></i>Volver</a>
 </div>
 <div class="nativaListHeader">
     <a href="#" class="asideItemHeader">Especies nativas en</a>
-    <h2><span>Esquema lateral</span></h2>
+    <h2><span>Esquema Natural</span></h2>
 <!--  <input type="text" placeholder="Buscar por nombre"> -->
 </div>
 
@@ -17,67 +17,54 @@
 <div class="nativaList">
     <div class="nativaListItem">
         <a href="?view=6">
-            <img src="img/nativas/balcon/a.jpg" alt="Nativa">
+            <img src="img/nativas/jardin/carquejilla.png" alt="Nativa">
             <div class="nativaListItemTitle">
-                <h3>Ceibo</h3>
-                <p>Lorem ipsum dolor</p>
+                <h3>Carquejilla</h3>
+                <p>Baccharis articulata</p>
             </div>
-            <div class="esquemaReference refColor7">    
+        </a>
+    </div>
+
+    <div class="nativaListItem">
+        <a href="#">
+            <img src="img/nativas/jardin/chilca.png" alt="Nativa">
+            <div class="nativaListItemTitle">
+                <h3>Chilca</h3>
+                <p>Baccharis spicata</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="nativaListItem">
+        <a href="#">
+            <img src="img/nativas/jardin/pastodebanado.png" alt="Nativa">
+            <div class="nativaListItemTitle">
+                <h3>Pasto de ba&ntilde;ado</h3>
+                <p>Paspalum quadrifarium</p>
             </div>
         </a>
     </div>
     
     <div class="nativaListItem">
-        <a href="?view=6">
-            <img src="img/nativas/balcon/b.jpg" alt="Nativa">
+        <a href="#">
+            <img src="img/nativas/jardin/algarrobo.png" alt="Nativa">
             <div class="nativaListItemTitle">
-                <h3>Lorem</h3>
-                <p>Lorem ipsum dolor</p>
-            </div>
-            <div class="esquemaReference refColor5">    
+                <h3>Algarrobo | Ibop&eacute;</h3>
+                <p>Prosopis alba</p>
             </div>
         </a>
     </div>
 
     <div class="nativaListItem">
-        <a href="?view=6">
-            <img src="img/nativas/balcon/c.jpg" alt="Nativa">
+        <a href="#">
+            <img src="img/nativas/jardin/varadeoro.png" alt="Nativa">
             <div class="nativaListItemTitle">
-                <h3>Ipsum</h3>
-                <p>Lorem ipsum dolor</p>
-            </div>
-            <div class="esquemaReference refColor4">    
+                <h3>Vara de oro</h3>
+                <p>Solidago chilensis</p>
             </div>
         </a>
     </div>
-
-    <div class="nativaListItem">
-        <a href="?view=6">
-            <img src="img/nativas/balcon/d.jpg" alt="Nativa">
-            <div class="nativaListItemTitle">
-                <h3>Dolor</h3>
-                <p>Lorem ipsum dolor</p>
-            </div>
-            <div class="esquemaReference refColor3">    
-            </div>
-        </a>
-    </div>
-
-    <div class="nativaListItem">
-        <a href="?view=6">
-            <img src="img/nativas/balcon/e.jpg" alt="Nativa">
-            <div class="nativaListItemTitle">
-                <h3>Amet</h3>
-                <p>Lorem ipsum dolor</p>
-            </div>
-            <div class="esquemaReference refColor1">    
-            </div>
-        </a>
-    </div>
-
-
 </div>
-
 
 
 

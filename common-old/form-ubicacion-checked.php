@@ -5,7 +5,7 @@
              <div class="asideBox">
             <label class="asideItemHeader">&#191;D&oacute;nde estas?</label>
            
-            <input type="text" placeholder="Ej. Capital Federal">
+            <input type="text" placeholder="Ej. San Isidro, Buenos Aires">
             </div>
             <!-- AREA DESCRIPTION -->
             <div class="hr"></div>
@@ -15,7 +15,7 @@
             <label class="asideItemHeader">&#191;C&oacute;mo es ese lugar</label>
             
             <label class=" areaDescription">
-                <input type="radio" name="areaDescription" value="urban">
+                <input type="radio" name="areaDescription" value="urban" checked>
                 <div class="radioEffect asideItemContent tooltip" title="Entorno en su mayor&iacute;a cubierto por edificaciones urbanas. Ej. ciudad, pueblo, etc.">
                     <h3><i class="fa fa-building fa-lg"></i>Zona Urbana</h3>
                 </div>
@@ -24,7 +24,7 @@
              <label class="areaDescription">
                 <input type="radio" name="areaDescription" value="urban">
                 <div class="radioEffect asideItemContent tooltip" title="Zona relativamente despojada de edificaciones. Mucho espacio verde disponible. Ej. quinta, granja, etc.">
-                    <h3><i class="fa fa-home fa-lg"></i>Zona Sub-urbana</h3>
+                    <h3><i class="fa fa-home fa-lg"></i>Zona Rural</h3>
                     
                 </div>
             </label>
@@ -32,7 +32,7 @@
              <label class="areaDescription">
                 <input type="radio" name="areaDescription" value="urban">
                 <div class="radioEffect asideItemContent tooltip" title="Espacio casi salvaje, con mínima edificación y buena disponibilidad para restaruación. Ej. monte, campo, etc.">
-                    <h3><i class="fa fa-pagelines fa-lg"></i>Zona Rural</h3>
+                    <h3><i class="fa fa-pagelines fa-lg"></i>Zona Natural</h3>
                     
                 </div>
             </label>
@@ -52,7 +52,7 @@
                 </div>
             </label><!-- 
              --><label class="terrainDimension">
-                <input type="radio" name="terrainDimension" value="medium">
+                <input type="radio" name="terrainDimension" value="medium" checked>
                 <div class="radioEffect terrainDimensionItem">
                     <h3>M</h3>
                     <p>Hasta<br>1000m2</p>   
@@ -89,7 +89,7 @@
                 </div>            
             </label><!-- 
              --><label class="terrainDimension">
-                <input type="radio" name="sunAvailable" value="large">
+                <input type="radio" name="sunAvailable" value="large" checked>
                 <div class="radioEffect terrainDimensionItem">
                     <i class="fa fa-sun-o fa-2x"></i>
                     <p>Soleado</p>

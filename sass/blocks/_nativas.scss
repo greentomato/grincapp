@@ -52,13 +52,13 @@
 	position: relative;
 
 	img {
-		height: 100%;
-		width: auto;
+		height: 58px;
+		width: 58px;
 		float: left;
 		border: $border;
 		@include border-radius(4px);
 	}
-
+	
 	&:hover {
 		background:$bgColorAlt;
 		border-color: darken($borderColor, 10);
@@ -75,6 +75,14 @@
 	}
 	a:active {
 		color: $mainColor;
+	}
+	h3 {
+		font-size: 16px;
+		font-weight: bold;
+	}
+	p{	
+		margin-top: 10px;
+		font-size: 13px;
 	}
 }
 
