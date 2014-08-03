@@ -2,18 +2,29 @@
 class Espacio extends Doctrine_Record {
     public function setTableDefinition() {
         $this->setTableName('espacio');
-        $this->hasColumn('id', 'integer', 1, array('primary' => true, 'unsigned'=>true, 'autoincrement'=>true));
+        $this->hasColumn('id', 'integer', 2, array('primary' => true, 'unsigned'=>true, 'autoincrement'=>true));
         $this->hasColumn('value', 'string', 255);
         $this->hasColumn('descripcion', 'string', 255);
         $this->hasColumn('imagen', 'string', 255);
     }
     
     public function setUp(){
+        $this->hasMany('Esquema as esquemas', array(
+            'local' => 'id_espacio',
+            'foreign' => 'id_esquema',
+            'refClass' => 'RelEspacioEsquema'
+        ));
         $this->hasMany('Especie as especies', array(
             'local' => 'id_espacio',
             'foreign' => 'id_especie',
             'refClass' => 'RelEspecieEspacio'
         ));
+        $this->actAs('Sluggable', array('fields'=>array('value'),'unique'=>true,'canUpdate'=>true,'name'=>'slug'));
+        $this->actAs('Timestampable', array('created'=>array('disabled'=>true)));
+    }
+    
+    public function desvincular ($relacion) {
+        Doctrine_Query::create()->delete($relacion)->where('id_espacio = ?', $this->id)->execute();
     }
     
     public static function toCheckbox ($objeto=false) {

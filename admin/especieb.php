@@ -9,39 +9,6 @@ include('php/controllers/borrarImagenesHuerfanas.controller.php');
     <script><?php include('php/includes/definer.js'); ?></script>
     <title>Grinc - Administrador</title>
     <?php include('tpl/head.tpl'); ?>
-    <style>
-        @media only screen and (min-width: 320px) {
-            .superbox-list {
-                width: 49%;
-            }
-        }
-        @media only screen and (min-width: 486px) {
-            .superbox-list {
-                width: 24.2%;
-            }
-        }
-        @media only screen and (min-width: 768px) {
-            .superbox-list {
-                width: 16.3%;
-            }
-        }
-        @media only screen and (min-width: 1025px) {
-            .superbox-list {
-                width: 12.2%;
-            }
-        }
-        @media only screen and (min-width: 1824px) {
-            .superbox-list {
-                width: 12.3%;
-            }
-        }
-        .superbox-img:hover {
-            opacity: 1;
-        }
-        .superbox-list a {position: absolute; right: 6px; bottom: 6px}
-        .superbox-list .btn:active {position: absolute; top: inherit !important; left: inherit !important}
-        .superbox-img {cursor: move}
-    </style>
 </head>
 
 <body class="">

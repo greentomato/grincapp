@@ -13,6 +13,11 @@ class Region extends Doctrine_Record {
             'foreign' => 'id_especie',
             'refClass' => 'RelEspecieRegion'
         ));
+        $this->actAs('Sluggable', array('fields'=>array('value'),'unique'=>true,'canUpdate'=>true,'name'=>'slug'));
+    }
+    
+    public function desvincular ($relacion) {
+        Doctrine_Query::create()->delete($relacion)->where('id_region = ?', $this->id)->execute();
     }
 
 }

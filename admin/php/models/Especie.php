@@ -5,12 +5,28 @@ class Especie extends Doctrine_Record {
         $this->hasColumn('id', 'integer', 5, array('primary' => true, 'unsigned'=>true, 'autoincrement'=>true));
         $this->hasColumn('nombre', 'string', 255);
         $this->hasColumn('denominacion', 'string', 255);
-        $this->hasColumn('imagen', 'string', 255);
-        $this->hasColumn('flor', 'string', 255);
-        $this->hasColumn('estado', 'integer', 1, array('unsigned'=>true, 'default'=>1)); //0: borrada - 1: visible
+        $this->hasColumn('id_imagen', 'integer', 8, array('unsigned'=>true));
+        $this->hasColumn('id_flor', 'integer', 8, array('unsigned'=>true));
+        $this->hasColumn('id_escala', 'integer', 8, array('unsigned'=>true));
     }
     
     public function setUp(){
+        $this->hasOne('Imagen as imagen',array(
+            'local'=>'id_imagen',
+            'foreign'=>'id',
+            'onDelete' => 'SET NULL'
+        ));
+        $this->hasOne('Imagen as flor',array(
+            'local'=>'id_flor',
+            'foreign'=>'id',
+            'onDelete' => 'SET NULL'
+        ));
+        $this->hasOne('Imagen as escala',array(
+            'local'=>'id_escala',
+            'foreign'=>'id',
+            'onDelete' => 'SET NULL'
+        ));
+        
         $this->hasMany('Tag as tags', array(
             'local' => 'id',
             'foreign' => 'id_especie'

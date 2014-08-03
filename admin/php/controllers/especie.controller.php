@@ -4,7 +4,13 @@ include_once(INC.'php/bootstrap.php');
 
 if ($_POST['id']) {
     $especie = Doctrine::getTable('especie')->find($_POST['id']);
-    Doctrine_Query::create()->delete('Tag')->where('id_especie = ?', $especie->id)->execute();
+    $especie->desvincular('RelEspecieDimension');
+    $especie->desvincular('RelEspecieEspacio');
+    $especie->desvincular('RelEspecieEsquema');
+    $especie->desvincular('RelEspecieRegion');
+    $especie->desvincular('RelEspecieSol');
+    $especie->desvincular('RelEspecieZona');
+    $especie->desvincular('Tag');
 } else {
     $especie = new Especie();
 }
@@ -13,7 +19,6 @@ $especie->denominacion = $_POST['denominacion'];
 
 //dimensiones
 if (isset($_POST['dimensiones'])) {
-    $especie->desvincular('RelEspecieDimension');
     $q = Doctrine_Query::create()->select('n.*')->from('dimension n')->whereIn('n.id', $_POST['dimensiones'])->execute();
     for ($i=0, $l=$q->count(); $i<$l; $i++) {
         $especie->dimensiones[] = $q[$i];
@@ -22,7 +27,6 @@ if (isset($_POST['dimensiones'])) {
 
 //espacios
 if (isset($_POST['espacios'])) {
-    $especie->desvincular('RelEspecieEspacio');
     $q = Doctrine_Query::create()->select('n.*')->from('espacio n')->whereIn('n.id', $_POST['espacios'])->execute();
     for ($i=0, $l=$q->count(); $i<$l; $i++) {
         $especie->espacios[] = $q[$i];
@@ -31,7 +35,6 @@ if (isset($_POST['espacios'])) {
 
 //esquemas
 if (isset($_POST['esquemas'])) {
-    $especie->desvincular('RelEspecieEsquema');
     $q = Doctrine_Query::create()->select('n.*')->from('esquema n')->whereIn('n.id', $_POST['esquemas'])->execute();
     for ($i=0, $l=$q->count(); $i<$l; $i++) {
         $especie->esquemas[] = $q[$i];
@@ -40,7 +43,6 @@ if (isset($_POST['esquemas'])) {
 
 //regiones
 if (isset($_POST['regiones'])) {
-    $especie->desvincular('RelEspecieRegion');
     $q = Doctrine_Query::create()->select('n.*')->from('region n')->whereIn('n.id', $_POST['regiones'])->execute();
     for ($i=0, $l=$q->count(); $i<$l; $i++) {
         $especie->regiones[] = $q[$i];
@@ -49,7 +51,6 @@ if (isset($_POST['regiones'])) {
 
 //soles
 if (isset($_POST['soles'])) {
-    $especie->desvincular('RelEspecieSol');
     $q = Doctrine_Query::create()->select('n.*')->from('sol n')->whereIn('n.id', $_POST['soles'])->execute();
     for ($i=0, $l=$q->count(); $i<$l; $i++) {
         $especie->soles[] = $q[$i];
@@ -58,7 +59,6 @@ if (isset($_POST['soles'])) {
 
 //zonas
 if (isset($_POST['zonas'])) {
-    $especie->desvincular('RelEspecieZona');
     $q = Doctrine_Query::create()->select('n.*')->from('zona n')->whereIn('n.id', $_POST['zonas'])->execute();
     for ($i=0, $l=$q->count(); $i<$l; $i++) {
         $especie->zonas[] = $q[$i];
@@ -68,7 +68,6 @@ $especie->save();
 
 //tags
 if (isset($_POST['tipotags'])) {
-    
     $tagsCollection = new Doctrine_Collection('tag');
     for ($i=0, $l=count($_POST['tipotags']); $i<$l; $i++) {
         $q = Doctrine_Query::create()
@@ -111,21 +110,42 @@ $tagsCollection->save();
 foreach (glob(INC.'../content/tmp/especies/flor-'.$_POST['imgprefix'].'-*') as $img) {
     $imageName = str_replace(INC.'../content/tmp/especies/', '', $img);
     $ext = explode('.', $imageName);
-    $especie->flor = 'flor-'.$especie->slug.'.'.end($ext);
-    $especie->save();
+    
+    $imageModel = Doctrine::getTable('imagen')->findOneBySrc($imageName);
+    $imageModel->src = 'flor-'.$especie->slug.'.'.end($ext);
+    $especie->flor = $imageModel;
+    
     rename($img, INC.'../content/especies/'.'flor-'.$especie->slug.'.'.end($ext));
     rename(INC.'../content/tmp/especies/thumb/'.$imageName, INC.'../content/especies/thumb/'.'flor-'.$especie->slug.'.'.end($ext));
+}
+
+//escala
+foreach (glob(INC.'../content/tmp/especies/escala-'.$_POST['imgprefix'].'-*') as $img) {
+    $imageName = str_replace(INC.'../content/tmp/especies/', '', $img);
+    $ext = explode('.', $imageName);
+    
+    $imageModel = Doctrine::getTable('imagen')->findOneBySrc($imageName);
+    $imageModel->src = 'escala-'.$especie->slug.'.'.end($ext);
+    $especie->escala = $imageModel;
+    
+    rename($img, INC.'../content/especies/'.'escala-'.$especie->slug.'.'.end($ext));
+    rename(INC.'../content/tmp/especies/thumb/'.$imageName, INC.'../content/especies/thumb/'.'escala-'.$especie->slug.'.'.end($ext));
 }
 
 //imagen
 foreach (glob(INC.'../content/tmp/especies/'.$_POST['imgprefix'].'-*') as $img) {
     $imageName = str_replace(INC.'../content/tmp/especies/', '', $img);
     $ext = explode('.', $imageName);
-    $especie->imagen = $especie->slug.'.'.end($ext);
-    $especie->save();
+    
+    $imageModel = Doctrine::getTable('imagen')->findOneBySrc($imageName);
+    $imageModel->src = $especie->slug.'.'.end($ext);
+    $especie->imagen = $imageModel;
+    
     rename($img, INC.'../content/especies/'.$especie->slug.'.'.end($ext));
     rename(INC.'../content/tmp/especies/thumb/'.$imageName, INC.'../content/especies/thumb/'.$especie->slug.'.'.end($ext));
 }
+
+$especie->save();
 
 if (isset($_POST['redirect'])) {
     $accion = ($_POST['id'])?'#edit':'#new';

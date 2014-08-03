@@ -9,7 +9,6 @@ $orderColumn = array(
 $recordsTotal = Doctrine_Query::create()
         ->select('count(e.id)')
         ->from('Especie e')
-        ->where('e.estado = 1')
         ->execute(array(), Doctrine::HYDRATE_SINGLE_SCALAR)
 ;
 
@@ -25,7 +24,6 @@ $data = Doctrine_Query::create()
             e.denominacion as denominacion
         ')
         ->from('Especie e')
-        ->where('e.estado = 1')
         ->limit($_GET['length'])
         ->offset($_GET['start'])
         ->orderBy($orderColumn[$_GET['order'][0]['column']].' '.$_GET['order'][0]['dir'])

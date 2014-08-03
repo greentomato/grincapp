@@ -6,7 +6,7 @@ class RelEspecieEspacio extends Doctrine_Record {
             'primary' => true,
             'unsigned'=>true,
 	));
-        $this->hasColumn('id_espacio', 'integer', 1, array(
+        $this->hasColumn('id_espacio', 'integer', 2, array(
             'primary' => true,
             'unsigned'=>true,
         ));

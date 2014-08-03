@@ -1,4 +1,4 @@
-#AddDefaultCharset UTF-8
+AddDefaultCharset UTF-8
 
 RewriteEngine on
 
@@ -8,6 +8,18 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^especies$ especiesb.php
 RewriteRule ^especie/?$ especieb.php
 RewriteRule ^especie/([0-9a-zA-Z-_]+)$ especieb.php?slug=$1
+
+RewriteRule ^espacios$ espaciosb.php
+RewriteRule ^espacio/?$ espaciob.php
+RewriteRule ^espacio/([0-9a-zA-Z-_]+)$ espaciob.php?slug=$1
+
+RewriteRule ^esquemas$ esquemasb.php
+RewriteRule ^esquema/?$ esquemab.php
+RewriteRule ^esquema/([0-9a-zA-Z-_]+)$ esquemab.php?slug=$1
+
+RewriteRule ^regiones$ regionesb.php
+RewriteRule ^region/?$ regionb.php
+RewriteRule ^region/([0-9a-zA-Z-_]+)$ regionb.php?slug=$1
 
 RewriteRule ^login/?$ loginb.php
 RewriteRule ^salir/?$ php/controllers/logout.controller.php

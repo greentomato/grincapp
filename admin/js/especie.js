@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    $('#left-panel li[data-nav="especie"]').addClass('active');
-    boxes();
+    $('#left-panel li[data-nav="especies"]').addClass('active');
     sortable();
     ajaxFileUpload();
     borrarImagen();
@@ -18,11 +17,6 @@ $(document).ready(function () {
         }
     })
 })
-
-function boxes () {
-    if (document.location.hash == '#new') boxSuccess('La especie se cargó con éxito');
-    if (document.location.hash == '#edit') boxSuccess('La especie se editó con éxito');
-}
 
 function sortable () {
     $( "#sortable1, #sortable2" ).sortable({
@@ -59,6 +53,9 @@ function forceImagenUpload () {
 function forceFlorUpload () {
     $('#florSubmit').trigger('click');
 }
+function forceEscalaUpload () {
+    $('#escalaSubmit').trigger('click');
+}
 
 
 //IMAGENES
@@ -73,7 +70,7 @@ function ajaxFileUpload () {
                     $('.imagenUploader img').attr('src', data[0].src);
                 })
                 .fadeIn(400, function () {
-                    $('.imagenUploader a').attr('data-src', data[0].src).show();
+                    $('.imagenUploader a').attr('data-id', data[0].id).show();
                 });
             }
         }
@@ -86,7 +83,20 @@ function ajaxFileUpload () {
                     $('.florUploader img').attr('src',data[0].src);
                 })
                 .fadeIn(400, function () {
-                    $('.florUploader a').attr('data-src', data[0].src).show();
+                    $('.florUploader a').attr('data-id', data[0].id).show();
+                });
+            }
+        }
+    });
+    $('#escalaUploader').ajaxForm({
+        success: function (data) {
+            if (data) {
+                $('.escalaUploader img')
+                .fadeOut(400, function() {
+                    $('.escalaUploader img').attr('src',data[0].src);
+                })
+                .fadeIn(400, function () {
+                    $('.escalaUploader a').attr('data-id', data[0].id).show();
                 });
             }
         }
@@ -99,7 +109,7 @@ function borrarImagen () {
         $.ajax({
             url:BASE_URL+'php/controllers/borrarImagen.controller.php',
             type:'post',
-            data:{src:$this.attr('data-src'), type:$this.attr('data-type')},
+            data:{id:$this.attr('data-id'), src:$this.attr('data-src')},
             success: function () {
                 $this.parent().find('img')
                 .fadeOut(400, function() {

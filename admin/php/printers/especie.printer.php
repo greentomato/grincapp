@@ -13,8 +13,7 @@ $tipoTags = Doctrine_Query::create()
 
 
 if (isset($_GET['slug'])) {
-    $especie = Doctrine::getTable('especie')->findOneBySlug($_GET['slug']);
-    if ($especie && $especie->estado) {
+    if ($especie = Doctrine::getTable('especie')->findOneBySlug($_GET['slug'])) {
         $accion = 'Editar';
         $icon = 'pencil';
         include(INC.'php/replacers/especie.full.replacer.php');

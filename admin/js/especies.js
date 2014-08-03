@@ -4,7 +4,7 @@ $(document).ready(function () {
     dtInit();
     boxes();
     borrarModalInit();
-    $('#left-panel li[data-nav="especie"]').addClass('active');
+    $('#left-panel li[data-nav="especies"]').addClass('active');
 })
 
 function dtInit () {

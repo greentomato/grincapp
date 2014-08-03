@@ -36,7 +36,7 @@
                                     <section>
                                         <label class="label">Usuario</label>
                                         <label class="input"> <i class="icon-append fa fa-user"></i>
-                                            <input type="text" name="usuario">
+                                            <input type="text" name="usuario" autofocus>
                                             <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Ingrese su nombre de usuario</b></label>
                                     </section>
 

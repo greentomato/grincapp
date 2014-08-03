@@ -1,9 +1,16 @@
-.smart-form .checkbox input:checked:hover+i:after {content: '\f00c'}
-.smart-form .btn-group .btn{ padding: 6px 12px}
 #especie .smart-form .label {font-weight: bold; margin-top: 20px}
+fieldset {
+display: block;
+padding: 25px 14px 5px;
+border: none;
+background: rgba(255,255,255,.9);
+position: relative;
+}
+hr.bloque {margin: 30px 0 10px 0}
+.google_maps {height: 500px}
 
 /*ajax uploader*/
-.vista-previa {position: relative; margin-top: 20px}
+.vista-previa {position: relative}
 .vista-previa a {
     position: absolute;
     top: 5px;
@@ -21,10 +28,30 @@
     background-color: rgba(0,0,0,0.6);
     width: 100%;
     text-align: center;
+    margin: 0
 }
-.uploader {border: 1px solid rgba(0,0,0,.08)}
-.uploader, .uploader img {width: 100%}
-.uploader img {cursor: pointer}
+.vista-previa img {border: 1px solid rgba(0,0,0,.08); width: 100%; cursor: pointer}
+.vista-previa label.uploader {width: 100%}
+
+.nativaDataHead {
+    padding: 20px;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #d0dbdd;
+    overflow: hidden;
+    text-align: left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(40, 40, 40, 0.2);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(40, 40, 40, 0.2);
+    box-shadow: 0px 0px 2px 0px rgba(40, 40, 40, 0.2);
+    
+}
 /*fin ajax uploader*/
 
 

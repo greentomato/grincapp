@@ -5,6 +5,7 @@ $html = str_replace('${imgprefix}', time() . '' . rand(1, 99999), $html);
 $html = str_replace('${title}', 'Nueva Especie', $html);
 $html = str_replace('${imagen}', 'img/uploader-background.jpg', $html);
 $html = str_replace('${flor}', 'img/uploader-background.jpg', $html);
+$html = str_replace('${escala}', 'img/uploader-background.jpg', $html);
 $html = str_replace('${zonaToCheckbox}', Zona::toCheckbox(), $html);
 $html = str_replace('${dimensionToCheckbox}', Dimension::toCheckbox(), $html);
 $html = str_replace('${solToCheckbox}', Sol::toCheckbox(), $html);

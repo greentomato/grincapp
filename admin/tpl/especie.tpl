@@ -90,45 +90,25 @@
                                                         <input type="text" name="denominacion" value="${denominacion}" />
                                                     </label>
                                                 </div>
-                                                <div  class="col col-md-6 col-sm-6">
+                                                <div  class="col col-md-4 col-sm-4">
                                                     <label class="label">Zona</label>
                                                     ${zonaToCheckbox}
                                                 </div>
-                                                <div  class="col col-md-6 col-sm-6">
+                                                <div  class="col col-md-4 col-sm-4">
                                                     <label class="label">Dimensión</label>
                                                     ${dimensionToCheckbox}
                                                 </div>
-                                                <div  class="col col-md-6 col-sm-6">
+                                                <div  class="col col-md-4 col-sm-4">
                                                     <label class="label">Luz solar</label>
                                                     ${solToCheckbox}
                                                 </div>
-                                                <div  class="col col-md-6 col-sm-6">
+                                                <div  class="col col-md-4 col-sm-4">
                                                     <label class="label">Espacio</label>
                                                     ${espacioToCheckbox}
                                                 </div>
-                                                <div  class="col col-md-6 col-sm-6">
+                                                <div  class="col col-md-4 col-sm-4">
                                                     <label class="label">Esquema</label>
                                                     ${esquemaToCheckbox}
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col col-md-6 col-sm-6">
-                                                    <div class="vista-previa imagenUploader">
-                                                        <a data-src="${imagen}" data-type="imagen" class="btn btn-mini btn-danger"><i class="fa fa-trash-o"></i></a>
-                                                        <label class="uploader" for="imagenInput">
-                                                            <img src="${imagen}">
-                                                        </label>
-                                                        <p>Img. representativa</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col col-md-6 col-sm-6">
-                                                    <div class="vista-previa florUploader">
-                                                        <a data-src="${flor}" data-type="flor" class="btn btn-mini btn-danger"><i class="fa fa-trash-o"></i></a>
-                                                        <label class="uploader" for="florInput">
-                                                            <img src="${flor}">
-                                                        </label>
-                                                        <p>Flor destacada</p>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </section>
@@ -141,6 +121,36 @@
                                         </section>
                                             
                                         
+                                    </div>
+                                            
+                                    <div class="row">
+                                        <section class="col col-md-4 col-sm-4">
+                                            <div class="vista-previa imagenUploader">
+                                                <a data-src="${imagen}" data-id="${imagen-id}" class="btn btn-mini btn-danger"><i class="fa fa-trash-o"></i></a>
+                                                <label class="uploader" for="imagenInput">
+                                                    <img src="${imagen}">
+                                                </label>
+                                                <p>Img. representativa</p>
+                                            </div>
+                                        </section>
+                                        <section class="col col-md-4 col-sm-4">
+                                            <div class="vista-previa florUploader">
+                                                <a data-src="${flor}" data-id="${flor-id}" class="btn btn-mini btn-danger"><i class="fa fa-trash-o"></i></a>
+                                                <label class="uploader" for="florInput">
+                                                    <img src="${flor}">
+                                                </label>
+                                                <p>Flor destacada</p>
+                                            </div>
+                                        </section>
+                                        <section class="col col-md-4 col-sm-4">
+                                            <div class="vista-previa escalaUploader">
+                                                <a data-src="${escala}" data-id="${escala-id}" class="btn btn-mini btn-danger"><i class="fa fa-trash-o"></i></a>
+                                                <label class="uploader" for="escalaInput">
+                                                    <img src="${escala}">
+                                                </label>
+                                                <p>Escala</p>
+                                            </div>
+                                        </section>
                                     </div>
                                             
                                 </fieldset>
@@ -158,6 +168,12 @@
                             <form id="florUploader" action="php/uploaders/flor.uploader.php" method="post" enctype="multipart/form-data">
                                 <input class="hidden" id="florInput" onchange="forceFlorUpload();"  type="file" name="files[]">
                                 <input class="hidden" id="florSubmit" type="submit" value="Upload File to Server">
+                                <input type="hidden" name="imgprefix" value="${imgprefix}" />
+                            </form>
+                            
+                            <form id="escalaUploader" action="php/uploaders/escala.uploader.php" method="post" enctype="multipart/form-data">
+                                <input class="hidden" id="escalaInput" onchange="forceEscalaUpload();"  type="file" name="files[]">
+                                <input class="hidden" id="escalaSubmit" type="submit" value="Upload File to Server">
                                 <input type="hidden" name="imgprefix" value="${imgprefix}" />
                             </form>
                             

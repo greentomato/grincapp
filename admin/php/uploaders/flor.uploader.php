@@ -32,9 +32,14 @@ for ($i=0, $l=count($_FILES['files']['name']); $i<$l; $i++) {
         $fileImage->escalar(256, 256);
         $fileImage->recortarDesdeElCentro(256, 256);
         $fileImage->save($ruta.'thumb/'.$nombre);
+        
+        $image = new Imagen();
+        $image->src = $nombre.'.'.$fileImage->extension;
+        $image->save();
 
         //respuesta
         $response[] = array(
+            'id'=>$image->id,
             'src'=>$relativePath.'thumb/'.$nombre.'.'.$fileImage->extension
         );
     }
