@@ -90,6 +90,17 @@
                                                         <input type="text" name="denominacion" value="${denominacion}" />
                                                     </label>
                                                 </div>
+
+                                                <div class="col col-md-12 col-sm-12 col-xs-12">
+                                                    <label for="tags" class="label">Regiones</label>
+                                                    <div class="note">
+                                                        Luego de escribir la región presione enter para agregarla. (La región tiene que estar cargada previamente)
+                                                    </div>
+                                                    <label class="input">
+                                                        <input type="text" id="tags" name="regiones" value="${regiones}" />
+                                                    </label>
+                                                </div>
+                                                    
                                                 <div  class="col col-md-4 col-sm-4">
                                                     <label class="label">Zona</label>
                                                     ${zonaToCheckbox}

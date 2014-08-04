@@ -17,6 +17,7 @@ $html = str_replace('${dimensionToCheckbox}', Dimension::toCheckbox($especie), $
 $html = str_replace('${solToCheckbox}', Sol::toCheckbox($especie), $html);
 $html = str_replace('${espacioToCheckbox}', Espacio::toCheckbox($especie), $html);
 $html = str_replace('${esquemaToCheckbox}', Esquema::toCheckbox($especie), $html);
+$html = str_replace('${regiones}', $especie->regionesToString('|'), $html);
 
 //tags genericos
 $tags = '';

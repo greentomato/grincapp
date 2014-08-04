@@ -31,8 +31,6 @@ foreach (glob(INC.'../content/tmp/espacios/'.$_POST['imgprefix'].'-*') as $img) 
 
 $espacio->save();
 
-if (isset($_POST['redirect'])) {
-    $accion = ($_POST['id'])?'#edit':'#new';
-    //header('location: '.URL.'espacio'.$accion);
-}
+$accion = ($_POST['id'])?'#edit':'#new';
+header('location: '.URL.'espacios'.$accion);
 ?>

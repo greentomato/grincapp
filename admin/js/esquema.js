@@ -56,7 +56,7 @@ function forceUpload (self) {
 //BLOQUES
 //agregar
 function agregarBloque () {
-    var i = $('div.bloque').length;
+    var i = $('div.bloque').length+1;
     var $bloque = $('<div class="bloque" />').append($('#infoPrincipal').html());
     $bloque.find('.infoAction').show();
     $bloque.find('a.borrarImagen').hide();

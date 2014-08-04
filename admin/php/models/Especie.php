@@ -72,6 +72,16 @@ class Especie extends Doctrine_Record {
         $this->actAs('Timestampable', array('created'=>array('disabled'=>true)));
     }
     
+    public function regionesToString ($separator = ', ') {
+        $q = Doctrine_Query::create()
+                ->select("group_concat(r.value separator '$separator') as regiones")
+                ->from('Region r')
+                ->innerJoin('r.especies e WITH e.id = '.$this->id)
+                ->groupBy('e.id');
+        $tags = $q->fetchOne();
+        return ($tags)?$tags->regiones:'';
+    }
+    
     public function hasTipoTag ($tipoTagId) {
         return Doctrine_Query::create()
                 ->select('count(e.id)')

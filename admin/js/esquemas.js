@@ -81,8 +81,6 @@ function loaderModalInit () {
 }
 
 function boxes () {
-    if (document.location.hash == '#new') boxSuccess('La esquema se cargó con éxito');
-    if (document.location.hash == '#edit') boxSuccess('La esquema se editó con éxito');
-    if (document.location.hash == '#error1') boxError('El formato del banner no es válido. Sólo se aceptan los siguientes formatos: jpg, png, gif y swf');
-    if (document.location.hash == '#error2') boxError('El archivo flash no coincide con el tamaño especificado');
+    if (document.location.hash == '#new') boxSuccess('El esquema se cargó con éxito');
+    if (document.location.hash == '#edit') boxSuccess('El esquema se editó con éxito');
 }

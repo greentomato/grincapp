@@ -7,5 +7,6 @@ $region->value = $_POST['value'];
 $region->polygon = $_POST['polygon'];
 $region->save();
 
-//header('location: '.URL.'especie'.$accion);
+$accion = ($_POST['id'])?'#edit':'#new';
+header('location: '.URL.'especie'.$accion);
 ?>

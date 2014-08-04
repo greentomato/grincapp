@@ -30,8 +30,8 @@ include('php/controllers/borrarImagenesHuerfanas.controller.php');
     ?>
     
     <script src="js/plugin/jquery-form/jquery-form.min.js"></script>
-    <script src="js/espacio.js"></script>
     <script src="js/boxMessage.js"></script>
+    <script src="js/espacio.js"></script>
 
 </body>
 </html>

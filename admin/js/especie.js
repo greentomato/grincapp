@@ -3,6 +3,7 @@ $(document).ready(function () {
     sortable();
     ajaxFileUpload();
     borrarImagen();
+    tags();
     $('.nativaDataItem .hidden').remove();
     $('.saveForm').click(function (){ $('form:first').submit()})
     $('.rating label').click(function (event) {
@@ -120,5 +121,34 @@ function borrarImagen () {
                 })
             }
         })
+    })
+}
+
+function tags () {
+    var cache = {}
+    $('#tags').tagsInput({
+        autocomplete_url: BASE_URL+'php/controllers/autocomplete.controller.php',
+        autocomplete:{
+            minLength: 2,
+            source: function( request, response ) {
+                var term = request.term;
+                if ( term in cache ) {
+                    response( cache[ term ] );
+                    return;
+                }
+                $.getJSON( BASE_URL+'php/controllers/autocomplete.controller.php', request, function( data, status, xhr ) {
+                    cache[ term ] = data;
+                    response( data );
+                })
+            },
+            appendTo: '#myAutocompleContainer'
+        },
+        height:'80px',
+        width:'99%',
+        defaultText: '',
+        delimiter:'|',
+        onAddTag: function () {
+            $('#tags_tag').autocomplete( "close" )
+        }
     })
 }

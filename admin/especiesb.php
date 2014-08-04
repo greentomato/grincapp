@@ -50,6 +50,7 @@
     <script src="js/plugin/typeahead/typeahead.min.js"></script>
     <script src="js/plugin/typeahead/typeaheadjs.min.js"></script>
     
+    <script src="js/boxMessage.js"></script>
     <script src="js/especies.js"></script>
 
 </body>

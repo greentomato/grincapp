@@ -43,9 +43,12 @@ if (isset($_POST['esquemas'])) {
 
 //regiones
 if (isset($_POST['regiones'])) {
-    $q = Doctrine_Query::create()->select('n.*')->from('region n')->whereIn('n.id', $_POST['regiones'])->execute();
-    for ($i=0, $l=$q->count(); $i<$l; $i++) {
-        $especie->regiones[] = $q[$i];
+    $tags = explode('|', $_POST['regiones']);
+    foreach ($tags as $value) {
+        if (!$value) continue;
+        if ($region = Doctrine::getTable('region')->findOneByValue($value)) {
+            $especie->regiones[] = $region;
+        }
     }
 }
 
@@ -147,8 +150,6 @@ foreach (glob(INC.'../content/tmp/especies/'.$_POST['imgprefix'].'-*') as $img) 
 
 $especie->save();
 
-if (isset($_POST['redirect'])) {
-    $accion = ($_POST['id'])?'#edit':'#new';
-    //header('location: '.URL.'especie'.$accion);
-}
+$accion = ($_POST['id'])?'#edit':'#new';
+header('location: '.URL.'especies'.$accion);
 ?>

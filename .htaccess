@@ -1,0 +1,12 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^espacios-disponibles$ espacios.php
+RewriteRule ^espacio/([0-9a-zA-Z-_]+)$ espacio.php?espacio=$1
+RewriteRule ^espacio/([0-9a-zA-Z-_]+)/([0-9a-zA-Z-_]+)$ espacio.php?espacio=$1&especie=$2
+RewriteRule ^esquema/([0-9a-zA-Z-_]+)$ esquema.php?esquema=$1
+RewriteRule ^esquema/([0-9a-zA-Z-_]+)/([0-9a-zA-Z-_]+)$ esquema.php?esquema=$1&especie=$2
