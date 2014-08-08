@@ -43,10 +43,9 @@ if (isset($_POST['esquemas'])) {
 
 //regiones
 if (isset($_POST['regiones'])) {
-    $tags = explode('|', $_POST['regiones']);
-    foreach ($tags as $value) {
-        if (!$value) continue;
-        if ($region = Doctrine::getTable('region')->findOneByValue($value)) {
+    foreach ($_POST['regiones'] as $id) {
+        if (!$id) continue;
+        if ($region = Doctrine::getTable('region')->find($id)) {
             $especie->regiones[] = $region;
         }
     }
@@ -106,7 +105,7 @@ if (isset($_POST['tipotags'])) {
      * 
      */
 }
-$tagsCollection->save();
+if ($tagsCollection->count()) $tagsCollection->save();
 
 //IMAGENES
 //flor

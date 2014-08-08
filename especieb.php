@@ -1,4 +1,14 @@
-<?php include('php/includes/definer.php'); ?>
+<?php
+include('php/includes/definer.php');
+if (!defined('BOOTSTRAP')) include(INC.'admin/php/bootstrap.php');
+$especies = Doctrine_Query::create()
+        ->select('e.slug, e.nombre, e.denominacion, i.src as imagen')
+        ->from('Especie e')
+        ->innerJoin('e.imagen i')
+        ->execute(array(), Doctrine::HYDRATE_ARRAY);
+$nativaListTitle = 'Listado general de especies';
+$back = URL;
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -36,10 +46,11 @@
 
         <!-- SIDEBAR -->
         <aside>
-            <?php include('php/printers/formUbicacion.printer.php'); ?>
+            <?php include('php/printers/listadoEspecies.printer.php'); ?>
         </aside>
 
         <?php
+            include('php/printers/especie.printer.php');
             include('tpl/footer.tpl');
             include('tpl/scripts.tpl');
         ?>
@@ -49,6 +60,24 @@
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
         <script>
             $(document).ready(function() {
+                $('body').on('click', '.closeNativaDataBox', function (event) {
+                    window.location = BASE_URL;
+                })
+                $('.nativaList a').click(function (event) {
+                    event.preventDefault();
+                    var slug = $(this).attr('href').replace('especie/', '');
+                    $.ajax({
+                        type:'get',
+                        url: BASE_URL+'php/printers/especie.printer.php',
+                        data:{especie: slug},
+                        success: function (data) {
+                            if ($('.nativaDataBoxShadow').length) {
+                                $('.nativaDataBoxShadow, .nativaDataBox').remove();
+                            }
+                            $('body > aside').after(data)
+                        }
+                    })
+                })
                 var currentPlace;
                 //error tooltip
                 $('.error-tooltip').tooltipster({

@@ -12,6 +12,22 @@ $esquema->value = $_POST['value'];
 $esquema->descripcion = $_POST['descripcion'];
 $esquema->save();
 
+//especies
+if (isset($_POST['especies'])) {
+    $esquema->desvincular('RelEspecieEsquema');
+    $relacionCollection = new Doctrine_Collection('RelEspecieEsquema');
+    $especies = json_decode(str_replace("'", '"', $_POST['especies']));;
+    foreach ($especies->ids as $id) {
+        if ($id) {
+            $n = new RelEspecieEsquema();
+            $n->id_esquema = $esquema->id;
+            $n->id_especie = $id;
+            $relacionCollection[] = $n;
+        }
+    }
+    $relacionCollection->save();
+}
+
 //BLOQUES
 if (isset($_POST['bloquesId'])) {
     for ($i=0, $l= count($_POST['bloquesId']); $i<$l; $i++) {
@@ -42,5 +58,5 @@ foreach (glob(INC.'../content/tmp/esquemas/'.$_POST['imgprefix'].'-*') as $img) 
 $esquema->save();
 
 $accion = ($_POST['id'])?'#edit':'#new';
-header('location: '.URL.'regiones'.$accion);
+header('location: '.URL.'esquemas'.$accion);
 ?>

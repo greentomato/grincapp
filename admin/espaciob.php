@@ -29,6 +29,12 @@ include('php/controllers/borrarImagenesHuerfanas.controller.php');
         include('tpl/scripts.tpl');
     ?>
     
+    <script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
+    <script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
+    <script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
+    <script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="js/plugin/datatables/i18n/spanish.js"></script>
+    
     <script src="js/plugin/jquery-form/jquery-form.min.js"></script>
     <script src="js/boxMessage.js"></script>
     <script src="js/espacio.js"></script>

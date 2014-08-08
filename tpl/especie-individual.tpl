@@ -1,11 +1,11 @@
-<a href="${back}" class="nativaDataBoxShadow"></a><!-- BLOCK END -->
+<a href="" class="nativaDataBoxShadow closeNativaDataBox"></a><!-- BLOCK END -->
 
 <!-- SINGLE SPECIES DATA -->
 <div class="nativaDataBox">
 	<div class="nativaDataBoxName">
-		<h3>Datos y cuidados de la especie</h3>
-        <a href="${back}">
-        <i class="fa fa-times fa-lg"></i>
+        <h3>Datos y cuidados de la especie</h3>
+        <a href="" class="closeNativaDataBox">
+            <i class="fa fa-times fa-lg"></i>
         </a>
 	</div>
 

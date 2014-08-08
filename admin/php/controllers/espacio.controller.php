@@ -4,7 +4,7 @@ include_once(INC.'php/bootstrap.php');
 
 if ($_POST['id']) {
     $espacio = Doctrine::getTable('espacio')->find($_POST['id']);
-    $espacio->desvincular('RelEspacioEsquema');
+    $espacio->desvincular('RelEspecieEspacio');
 } else {
     $espacio = new Espacio();
 }
@@ -12,12 +12,19 @@ $espacio->value = $_POST['value'];
 $espacio->descripcion = $_POST['descripcion'];
 $espacio->save();
 
-//esquemas
-if (isset($_POST['esquemas'])) {
-    $q = Doctrine_Query::create()->select('n.*')->from('esquema n')->whereIn('n.id', $_POST['esquemas'])->execute();
-    for ($i=0, $l=$q->count(); $i<$l; $i++) {
-        $espacio->esquemas[] = $q[$i];
+//especies
+if (isset($_POST['especies'])) {
+    $relacionCollection = new Doctrine_Collection('RelEspecieEspacio');
+    $especies = json_decode(str_replace("'", '"', $_POST['especies']));;
+    foreach ($especies->ids as $id) {
+        if ($id) {
+            $n = new RelEspecieEspacio();
+            $n->id_espacio = $espacio->id;
+            $n->id_especie = $id;
+            $relacionCollection[] = $n;
+        }
     }
+    $relacionCollection->save();
 }
 
 //IMAGEN

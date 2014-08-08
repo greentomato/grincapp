@@ -9,5 +9,6 @@ $html = str_replace('${descripcion}', $espacio->descripcion, $html);
 $html = str_replace('${imagen}', ($espacio->imagen)?URL.'../content/espacios/thumb/'.$espacio->imagen:'img/uploader-background.jpg', $html);
 $html = str_replace('${src}', ($espacio->imagen)?URL.'../content/espacios/thumb/'.$espacio->imagen:'img/uploader-background.jpg', $html);
 $html = str_replace('${esquemaToCheckbox}', Esquema::toCheckbox($espacio), $html);
+$html = str_replace('${especiesSelected}', $especiesSelected, $html);
 $html = preg_replace('/\${*[A-Za-z0-9]*\}*/', '', $html);
 ?>

@@ -8,8 +8,9 @@
     <section class="col col-md-2 col-sm-3 col-xs-12">
         <div class="vista-previa imagenUploader">
             <a data-src="${imagen}" data-tabla="imagen" class="btn btn-mini btn-danger borrarImagen"><i class="fa fa-trash-o borrarImagen"></i></a>
+            <p class="info"><i style="display: none" class="fa fa-circle-o-notch fa-spin"></i> <span>Click para cargar la imagen</span></p>
             <img class="img-responsive inputFileDispacher" data-i="${i}" src="${imagen}">
-            <p>Imagen</p>
+            <p class="description">Imagen</p>
         </div>
     </section>
 

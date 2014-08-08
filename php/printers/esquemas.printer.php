@@ -21,5 +21,11 @@ $_SESSION['userSelection'] = $userSelection;
 $html = '';
 $esquemaBoxTpl = file_get_contents(INC.'tpl/esquema-box.tpl');
 include(INC.'php/replacers/esquemas.replacer.php');
+if (strlen($html) == 0) {
+    $html = '
+        <li class="no-results">No encontramos esquemas de plantaci&oacute;n para tu zona.<br />
+        Estamos trabajando para extender nuestro alcance.</li>
+    ';
+}
 echo($html);
 ?>

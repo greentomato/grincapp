@@ -26,7 +26,15 @@ include('php/checkers/login.checker.php');
     <?php 
         include('tpl/footer.tpl');
         include('tpl/scripts.tpl');
+        include('tpl/modal.tpl');
     ?>
+    
+    <script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
+    <script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
+    <script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
+    <script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="js/plugin/datatables/i18n/spanish.js"></script>
+    
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="js/plugin/mapToolbar/mapToolbar.js"></script>
     <script src="js/boxMessage.js"></script>

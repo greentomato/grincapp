@@ -93,12 +93,13 @@
 
                                                 <div class="col col-md-12 col-sm-12 col-xs-12">
                                                     <label for="tags" class="label">Regiones</label>
-                                                    <div class="note">
+                                                    ${regionToSelect}
+                                                    <!--<div class="note">
                                                         Luego de escribir la región presione enter para agregarla. (La región tiene que estar cargada previamente)
                                                     </div>
                                                     <label class="input">
                                                         <input type="text" id="tags" name="regiones" value="${regiones}" />
-                                                    </label>
+                                                    </label>-->
                                                 </div>
                                                     
                                                 <div  class="col col-md-4 col-sm-4">
@@ -139,27 +140,30 @@
                                             <div class="vista-previa imagenUploader">
                                                 <a data-src="${imagen}" data-id="${imagen-id}" class="btn btn-mini btn-danger"><i class="fa fa-trash-o"></i></a>
                                                 <label class="uploader" for="imagenInput">
+                                                    <p class="info"><i style="display: none" class="fa fa-circle-o-notch fa-spin"></i> <span>Click para cargar la imagen</span></p>
                                                     <img src="${imagen}">
                                                 </label>
-                                                <p>Img. representativa</p>
+                                                <p class="description">Img. representativa</p>
                                             </div>
                                         </section>
                                         <section class="col col-md-4 col-sm-4">
                                             <div class="vista-previa florUploader">
                                                 <a data-src="${flor}" data-id="${flor-id}" class="btn btn-mini btn-danger"><i class="fa fa-trash-o"></i></a>
                                                 <label class="uploader" for="florInput">
+                                                    <p class="info"><i style="display: none" class="fa fa-circle-o-notch fa-spin"></i> <span>Click para cargar la imagen</span></p>
                                                     <img src="${flor}">
                                                 </label>
-                                                <p>Flor destacada</p>
+                                                <p class="description">Flor destacada</p>
                                             </div>
                                         </section>
                                         <section class="col col-md-4 col-sm-4">
                                             <div class="vista-previa escalaUploader">
                                                 <a data-src="${escala}" data-id="${escala-id}" class="btn btn-mini btn-danger"><i class="fa fa-trash-o"></i></a>
                                                 <label class="uploader" for="escalaInput">
+                                                    <p class="info"><i style="display: none" class="fa fa-circle-o-notch fa-spin"></i> <span>Click para cargar la imagen</span></p>
                                                     <img src="${escala}">
                                                 </label>
-                                                <p>Escala</p>
+                                                <p class="description">Escala</p>
                                             </div>
                                         </section>
                                     </div>

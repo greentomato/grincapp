@@ -28,6 +28,9 @@
                 </span>
             </h1>
         </div>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8 text-right">
+            <a href="espacio" class="btn btn-success"><span class="fa fa-plus"></span> Cargar espacio</a>
+        </div>
         <!-- /col -->
 
     </div>
@@ -62,7 +65,7 @@
                     <div role="content">
 
                         <!-- widget content -->
-                        <div class="widget-body no-padding">
+                        <div class="widget-body no-padding">                            
                             <table id="espacios" class="table table-striped table-bordered table-hover" width="100%">
                                 <thead>
                                     <tr>
@@ -75,7 +78,7 @@
                                 </tbody>
                             </table>
                             <p>&nbsp;</p>
-                            <p>&nbsp;&nbsp;<a href="espacio" class="btn btn-success"><span class="fa fa-plus"></span> Cargar espacio</a></p>
+                            <p class="text-right"><a href="espacio" class="btn btn-success"><span class="fa fa-plus"></span> Cargar espacio</a>&nbsp;&nbsp;</p>
                         </div>
                         <!-- /widget content -->
 

@@ -6,7 +6,7 @@
 <html lang="es-ar">
 <head>
     <script><?php include('php/includes/definer.js'); ?></script>
-    <title>Lucía Celasco - Administrador</title>
+    <title>Grinc - Administrador</title>
     <?php include('tpl/head.tpl'); ?>
 </head>
 

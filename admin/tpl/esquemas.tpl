@@ -28,6 +28,9 @@
                 </span>
             </h1>
         </div>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8 text-right">
+            <a href="esquema" class="btn btn-success"><span class="fa fa-plus"></span> Cargar esquema</a>
+        </div>
         <!-- /col -->
 
     </div>
@@ -75,7 +78,7 @@
                                 </tbody>
                             </table>
                             <p>&nbsp;</p>
-                            <p>&nbsp;&nbsp;<a href="esquema" class="btn btn-success"><span class="fa fa-plus"></span> Cargar esquema</a></p>
+                            <p class="text-right"><a href="esquema" class="btn btn-success"><span class="fa fa-plus"></span> Cargar esquema</a>&nbsp;&nbsp;</p>
                         </div>
                         <!-- /widget content -->
 

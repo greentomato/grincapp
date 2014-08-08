@@ -1,14 +1,6 @@
 <?php
-$http = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-if (strpos($http, 'espacio') !== FALSE) {
-    $url = preg_replace('#espacio/([0-9a-zA-Z-_]+)(.*)?#', 'espacio/$1', $http);
-} else {
-    $url = preg_replace('#esquema/([0-9a-zA-Z-_]+)(.*)?#', 'esquema/$1', $http);
-}
-
-$html = str_replace('${nombre}', $especie['nombre'], $html);
-$html = str_replace('${denominacion}', $especie['denominacion'], $html);
-$html = str_replace('${back}', $url, $html);
+$html = str_replace('${nombre}', htmlentities($especie['nombre']), $html);
+$html = str_replace('${denominacion}', htmlentities($especie['denominacion']), $html);
 
 if ($especie->imagen->id) $html = str_replace('${imagen}', $especie->imagen->src, $html);
 
@@ -18,17 +10,26 @@ $tagsHtml = '';
 $observacion = '';
 if ($tags->count()) {
     foreach ($tags as $tag) {
-        if ($tag->prototag->tipo->value == 'Observaciones' && $especie->flor->id) {
-            $tagsHtml .= '
-                <div class="nativaDataItem tooltip" title="La flor que identifica a esta especie.">
-                    <h3><i class="fa fa-pagelines"></i>Flor destacada</h3>
-                    <img class="nativeFlower" src="content/especies/'.$especie->flor->src.'" alt="flor-carquejilla">
-                </div>';
+        if ($tag->prototag->tipo->value == 'Observaciones') {
+            if ($especie->flor->id) {
+                $tagsHtml .= '
+                    <div class="nativaDataItem tooltip" title="La flor que identifica a esta especie.">
+                        <h3><i class="fa fa-pagelines"></i>Flor destacada</h3>
+                        <img class="nativeFlower" src="content/especies/'.$especie->flor->src.'" alt="'.$especie->nombre.'">
+                    </div>';
+            }
+            if ($especie->escala->id)  {
+                $tagsHtml .= '
+                    <div class="nativaDataItem tooltip" title="Escala">
+                        <h3><i class="fa fa-pagelines"></i>Escala</h3>
+                        <img class="nativeFlower" src="content/especies/'.$especie->escala->src.'" alt="'.$especie->nombre.'">
+                    </div>';
+            }
         }
         
         $tagsHtml .= $tagTpl;
         if ($tag->descripcion !== NULL) {
-            $tagsHtml = str_replace('${descripcion}', $tag->descripcion, $tagsHtml);
+            $tagsHtml = str_replace('${descripcion}', htmlentities($tag->descripcion), $tagsHtml);
         } else {
             $tagsHtml = str_replace('${hasDescripcion}', 'hidden', $tagsHtml);
         }
@@ -44,7 +45,7 @@ if ($tags->count()) {
             $tagsHtml = str_replace('${hasNivel}', 'hidden', $tagsHtml);
         }
         $tagsHtml = str_replace('${icon}', $tag->prototag->tipo->icon, $tagsHtml);
-        $tagsHtml = str_replace('${value}', $tag->prototag->tipo->value, $tagsHtml);
+        $tagsHtml = str_replace('${value}', htmlentities($tag->prototag->tipo->value), $tagsHtml);
         $tagsHtml = str_replace('${tooltip}', $tag->prototag->tooltip, $tagsHtml);
         $tagsHtml = preg_replace('/\${*[A-Za-z0-9_-]*\}*/', '', $tagsHtml);
     }

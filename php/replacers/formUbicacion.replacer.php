@@ -5,8 +5,8 @@ for ($i=0, $l=count($resutls); $i<$l; $i++) {
         $checked = (isset($_POST['zona']) && $_POST['zona'] == $resutls[$i]['zonaId'])?'checked':'';
         $zonas .= $labelRadioTpl;
         $zonas = str_replace('${id}', $resutls[$i]['zonaId'], $zonas);
-        $zonas = str_replace('${title}', $resutls[$i]['zonaTooltip'], $zonas);
-        $zonas = str_replace('${titulo}', '<h3><i class="fa '.$resutls[$i]['zonaIcon'].' fa-lg"></i>'.$resutls[$i]['zonaVale'].'</h3>', $zonas);
+        $zonas = str_replace('${title}', htmlentities($resutls[$i]['zonaTooltip']), $zonas);
+        $zonas = str_replace('${titulo}', '<h3><i class="fa '.$resutls[$i]['zonaIcon'].' fa-lg"></i>'.htmlentities($resutls[$i]['zonaVale']).'</h3>', $zonas);
         $zonas = str_replace('${checked}', $checked, $zonas);
     }
     if ($resutls[$i]['dimensionId']) {
@@ -14,7 +14,7 @@ for ($i=0, $l=count($resutls); $i<$l; $i++) {
         $dimensiones .= $labelRadioTpl;
         $dimensiones = str_replace('${id}', $resutls[$i]['dimensionId'], $dimensiones);
         $dimensiones = str_replace('${titulo}', '<h3>'.$resutls[$i]['dimensionLetra'].'</h3>', $dimensiones);
-        $dimensiones = str_replace('${descripcion}', '<p>'.$resutls[$i]['dimensionValue'].'</p>', $dimensiones);
+        $dimensiones = str_replace('${descripcion}', '<p>'.htmlentities($resutls[$i]['dimensionValue']).'</p>', $dimensiones);
         $dimensiones = str_replace('${checked}', $checked, $dimensiones);
     }
     if ($resutls[$i]['solId']) {
@@ -22,7 +22,7 @@ for ($i=0, $l=count($resutls); $i<$l; $i++) {
         $soles .= $labelRadioTpl;
         $soles = str_replace('${id}', $resutls[$i]['solId'], $soles);
         $soles = str_replace('${titulo}', $resutls[$i]['solIcon'], $soles);
-        $soles = str_replace('${descripcion}', '<p>'.$resutls[$i]['solValue'].'</p>', $soles);
+        $soles = str_replace('${descripcion}', '<p>'.htmlentities($resutls[$i]['solValue']).'</p>', $soles);
         $soles = str_replace('${checked}', $checked, $soles);
     }
 }
@@ -39,6 +39,7 @@ $soles = str_replace('${labelClass}', 'terrainDimension', $soles);
 $soles = str_replace('${name}', 'sol', $soles);
 $soles = str_replace('${divClass}', 'terrainDimensionItem', $soles);
 
+if (isset($_POST['lugar'])) $html = str_replace('${lugar}', $_POST['lugar'], $html);
 
 $html = str_replace('${zonas}', $zonas, $html);
 $html = str_replace('${dimensiones}', $dimensiones, $html);

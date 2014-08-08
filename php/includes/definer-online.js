@@ -1,1 +1,1 @@
-var BASE_URL = 'http://'+window.location.hostname+'/test/admin/';
+var BASE_URL = 'http://'+window.location.hostname+'/app/';

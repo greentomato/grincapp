@@ -85,8 +85,9 @@
                                         <section class="col col-md-2 col-sm-3 col-xs-12">
                                            <div class="vista-previa imagenUploader">
                                                 <a data-src="${imagen}" data-tabla="esquema" class="btn btn-mini btn-danger borrarImagen"><i class="fa fa-trash-o borrarImagen"></i></a>
+                                                <p class="info"><i style="display: none" class="fa fa-circle-o-notch fa-spin"></i> <span>Click para cargar la imagen</span></p>
                                                 <img class="img-responsive inputFileDispacher" src="${imagen}">
-                                                <p>Imagen</p>
+                                                <p class="description">Imagen</p>
                                             </div>
                                         </section>
                                         
@@ -143,6 +144,62 @@
             </article>
             <!-- /WIDGET FORM -->
             
+            <!-- WIDGET ESPECIES -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div 
+                    class="jarviswidget jarviswidget-color-darken" 
+                    id="" 
+                    data-widget-colorbutton="false" 
+                    data-widget-editbutton="false" 
+                    data-widget-togglebutton="false" 
+                    data-widget-deletebutton="false" 
+                    data-widget-sortable="false"
+                >
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-list"></i> </span>
+                        <h2>Listado de especies</h2>				
+                        <span id="dt-loader" class="jarviswidget-loader" style="display: none;"><i class="fa fa-refresh fa-spin"></i></span>
+                    </header>
+
+                    <!-- widget div-->
+                    <div role="content">
+
+                        <!-- widget content -->
+                        <div class="widget-body no-padding">
+                            <table id="especiesSelected" class="table table-striped table-bordered table-hover" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre común</th>
+                                        <th>Nombre científico</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <div class="widget-footer smart-form">
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-success saveForm" type="submit">
+                                        Guardar
+                                    </button>	
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /widget content -->
+                        
+                        
+
+                    </div>
+                    <!-- /widget div -->
+
+                </div>
+                <!-- /widget -->
+
+            </article>
+            <!-- /WIDGET ESPECIES -->
+            
         </div>
 
         <!-- /row -->
@@ -152,3 +209,7 @@
 
 </div>
 <!-- /ESQUEMA -->
+
+<script>
+    var especiesSelected = ${especiesSelected}
+</script>

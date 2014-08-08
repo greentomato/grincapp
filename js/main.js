@@ -1,5 +1,5 @@
 var Geolocation = (function () {
-    var autocomplete, input, currentPlace;
+    var autocomplete, input;
     function initialize(inputId, callback) {
         input = document.getElementById(inputId);
         autocomplete = new google.maps.places.Autocomplete(

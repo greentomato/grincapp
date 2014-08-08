@@ -7,6 +7,7 @@ $html = str_replace('${title}', $esquema->value, $html);
 $html = str_replace('${value}', $esquema->value, $html);
 $html = str_replace('${descripcion}', $esquema->descripcion, $html);
 $html = str_replace('${imagen}', ($esquema->imagen)?URL.'../content/esquemas/thumb/'.$esquema->imagen:'img/uploader-background.jpg', $html);
+$html = str_replace('${especiesSelected}', $especiesSelected, $html);
 
 //bloques
 $bloques = '';

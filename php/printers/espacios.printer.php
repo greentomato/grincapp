@@ -56,5 +56,11 @@ if (count($ids)) {
 $html = '';
 $spaceBoxTpl = file_get_contents(INC.'tpl/space-box.tpl');
 include(INC.'php/replacers/espacios.replacer.php');
+if (strlen($html) == 0) {
+    $html = '
+        <li class="no-results">No encontramos espacios de plantaci&oacute;n para tu zona.<br />
+        Estamos trabajando para extender nuestro alcance.</li>
+    ';
+}
 echo($html);
 ?>

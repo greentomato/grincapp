@@ -1,6 +1,6 @@
 <hgroup>
     <h2>Esquema ${value}</h2>
-    <h4>Este esquema de plantación es a modo representativo y de guía para que te inspires.</h4>
+    <h4>Este esquema de plantaci&oacute;n es a modo representativo y de gu&iacute;a para que te inspires.</h4>
 </hgroup>
 
 <!-- SPACES RESULTS --> 

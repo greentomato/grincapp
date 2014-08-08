@@ -11,6 +11,7 @@ $html = str_replace('${dimensionToCheckbox}', Dimension::toCheckbox(), $html);
 $html = str_replace('${solToCheckbox}', Sol::toCheckbox(), $html);
 $html = str_replace('${espacioToCheckbox}', Espacio::toCheckbox(), $html);
 $html = str_replace('${esquemaToCheckbox}', Esquema::toCheckbox(), $html);
+$html = str_replace('${regionToSelect}', Region::toSelect(), $html);
 
 $tags = '';
 for ($i=0, $l=count($tipoTags); $i<$l; $i++) {
